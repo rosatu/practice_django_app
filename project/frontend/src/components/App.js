@@ -1,14 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import DataProvider from "./DataProvider";
-import Table from "./Table";
-import Form from "./Form";
+import PSTable from "./PSTable";
 
 const App = () => (
-  <React.Fragment>
-    <DataProvider endpoint="api/lead/" render={data => <Table data={data} />} />
-    <Form endpoint="api/lead/" />
-  </React.Fragment>
+  <DataProvider endpoint="api/psproperties/"
+                render={data => <PSTable data={data} />} />
 );
 const wrapper = document.getElementById("app");
 wrapper ? ReactDOM.render(<App />, wrapper) : null;
